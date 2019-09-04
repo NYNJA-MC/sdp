@@ -122,11 +122,7 @@ public class SessionDescription {
 	for (Bandwidth bandwidth: bandwidths)
 		//Add it
 		cloned.addBandwidth(bandwidth.clone());
-	//For each connection
-	for (Attribute attribute: attributes)
-		//Add it
-		cloned.addAttribute(attribute.clone());
-	//For each connection
+	//For each attribute
 	for (Attribute attribute: attributes)
 		//Add it
 		cloned.addAttribute(attribute.clone());
