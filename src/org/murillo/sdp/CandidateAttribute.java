@@ -34,6 +34,10 @@ public class CandidateAttribute implements Attribute {
         public void setValue(String value) {
             this.value = value;
         }
+
+        public Extension clone() {
+            return new Extension(name, value);
+        }
     }
 
     private String fundation;
@@ -64,7 +68,11 @@ public class CandidateAttribute implements Attribute {
     
     @Override
     public CandidateAttribute clone() {
-	    return new CandidateAttribute(fundation, componentId, transport, priority, address, port, type);
+        CandidateAttribute cloned = new CandidateAttribute(fundation, componentId, transport, priority, address, port, type);
+        for (Extension ext : extensions) {
+            cloned.addExtension(ext.clone());
+        }
+        return cloned;
     }
   
 
