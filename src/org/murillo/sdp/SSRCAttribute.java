@@ -5,6 +5,8 @@
 
 package org.murillo.sdp;
 
+import java.util.Objects;
+
 /**
  *
  * @author Sergio
@@ -72,7 +74,20 @@ public class SSRCAttribute implements Attribute {
         this.attrValue = attrValue;
     }
 
-    
+    @Override
+    public boolean equals(Object rhsObject) {
+        if (!(rhsObject instanceof SSRCAttribute)) {
+            return false;
+        }
+        SSRCAttribute rhs = (SSRCAttribute)rhsObject;
+        return
+            Objects.equals(SSRC, rhs.SSRC)
+            && Objects.equals(attrField, rhs.attrField)
+            && Objects.equals(attrValue, rhs.attrValue);
+    }
 
-
+    @Override
+    public int hashCode() {
+        return Objects.hash(SSRC, attrField, attrValue);
+    }
 }

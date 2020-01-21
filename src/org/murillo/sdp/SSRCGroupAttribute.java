@@ -7,6 +7,7 @@ package org.murillo.sdp;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  *
@@ -78,5 +79,19 @@ public class SSRCGroupAttribute implements Attribute {
         this.semantics = semantics;
     }
 
+    @Override
+    public boolean equals(Object rhsObject) {
+        if (!(rhsObject instanceof SSRCGroupAttribute)) {
+            return false;
+        }
+        SSRCGroupAttribute rhs = (SSRCGroupAttribute)rhsObject;
+        return
+            Objects.equals(semantics, rhs.semantics)
+            && Objects.equals(SSRCIds, rhs.SSRCIds);
+    }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(semantics, SSRCIds);
+    }
 }
