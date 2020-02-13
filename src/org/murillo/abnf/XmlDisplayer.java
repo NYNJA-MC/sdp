@@ -3,7 +3,7 @@
  * -----------------------------------------------------------------------------
  *
  * Producer : com.parse2.aparse.Parser 2.2
- * Produced : Thu Jan 05 18:57:59 CET 2017
+ * Produced : Thu Feb 13 17:43:10 EET 2020
  *
  * -----------------------------------------------------------------------------
  */
@@ -2548,26 +2548,6 @@ public class XmlDisplayer implements Visitor
     return null;
   }
 
-  public Object visit(org.murillo.abnf.precomp.Token rule)
-  {
-    if (!terminal) System.out.println();
-    System.out.print("<org.murillo.abnf.precomp.Token>");
-    System.out.print(rule.spelling);
-    System.out.print("</org.murillo.abnf.precomp.Token>");
-    terminal = false;
-    return null;
-  }
-
-  public Object visit(org.murillo.abnf.precomp.ByteString rule)
-  {
-    if (!terminal) System.out.println();
-    System.out.print("<org.murillo.abnf.precomp.ByteString>");
-    System.out.print(rule.spelling);
-    System.out.print("</org.murillo.abnf.precomp.ByteString>");
-    terminal = false;
-    return null;
-  }
-
   public Object visit(org.murillo.abnf.precomp.CRLF rule)
   {
     if (!terminal) System.out.println();
@@ -2578,12 +2558,32 @@ public class XmlDisplayer implements Visitor
     return null;
   }
 
+  public Object visit(org.murillo.abnf.precomp.Token rule)
+  {
+    if (!terminal) System.out.println();
+    System.out.print("<org.murillo.abnf.precomp.Token>");
+    System.out.print(rule.spelling);
+    System.out.print("</org.murillo.abnf.precomp.Token>");
+    terminal = false;
+    return null;
+  }
+
   public Object visit(org.murillo.abnf.precomp.ALPHA rule)
   {
     if (!terminal) System.out.println();
     System.out.print("<org.murillo.abnf.precomp.ALPHA>");
     System.out.print(rule.spelling);
     System.out.print("</org.murillo.abnf.precomp.ALPHA>");
+    terminal = false;
+    return null;
+  }
+
+  public Object visit(org.murillo.abnf.precomp.ByteString rule)
+  {
+    if (!terminal) System.out.println();
+    System.out.print("<org.murillo.abnf.precomp.ByteString>");
+    System.out.print(rule.spelling);
+    System.out.print("</org.murillo.abnf.precomp.ByteString>");
     terminal = false;
     return null;
   }

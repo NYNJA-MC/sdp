@@ -3,7 +3,7 @@
  * -----------------------------------------------------------------------------
  *
  * Producer : com.parse2.aparse.Parser 2.2
- * Produced : Thu Jan 05 18:57:59 CET 2017
+ * Produced : Thu Feb 13 17:43:10 EET 2020
  *
  * -----------------------------------------------------------------------------
  */
@@ -1070,25 +1070,25 @@ public class Displayer implements Visitor
     return visitRules(rule.rules);
   }
 
-  public Object visit(org.murillo.abnf.precomp.Token rule)
-  {
-    System.out.print(rule.spelling);
-    return null;
-  }
-
-  public Object visit(org.murillo.abnf.precomp.ByteString rule)
-  {
-    System.out.print(rule.spelling);
-    return null;
-  }
-
   public Object visit(org.murillo.abnf.precomp.CRLF rule)
   {
     System.out.print(rule.spelling);
     return null;
   }
 
+  public Object visit(org.murillo.abnf.precomp.Token rule)
+  {
+    System.out.print(rule.spelling);
+    return null;
+  }
+
   public Object visit(org.murillo.abnf.precomp.ALPHA rule)
+  {
+    System.out.print(rule.spelling);
+    return null;
+  }
+
+  public Object visit(org.murillo.abnf.precomp.ByteString rule)
   {
     System.out.print(rule.spelling);
     return null;

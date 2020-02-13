@@ -3,7 +3,7 @@
  * -----------------------------------------------------------------------------
  *
  * Producer : com.parse2.aparse.Parser 2.2
- * Produced : Thu Jan 05 18:57:59 CET 2017
+ * Produced : Thu Feb 13 17:43:10 EET 2020
  *
  * -----------------------------------------------------------------------------
  */
@@ -223,10 +223,10 @@ public interface Visitor
   public Object visit(Rule$POS_DIGIT rule);
   public Object visit(Rule$DQUOTE rule);
   public Object visit(Rule$EQUALS rule);
-  public Object visit(org.murillo.abnf.precomp.Token rule);
-  public Object visit(org.murillo.abnf.precomp.ByteString rule);
   public Object visit(org.murillo.abnf.precomp.CRLF rule);
+  public Object visit(org.murillo.abnf.precomp.Token rule);
   public Object visit(org.murillo.abnf.precomp.ALPHA rule);
+  public Object visit(org.murillo.abnf.precomp.ByteString rule);
 
   public Object visit(Terminal$StringValue value);
   public Object visit(Terminal$NumericValue value);
