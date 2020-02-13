@@ -5,19 +5,19 @@
 
 package org.murillo.sdp.impl;
 
-import org.murillo.abnf.Rule$candidate_attribute;
-import org.murillo.abnf.Rule$foundation;
-import org.murillo.abnf.Rule$component_id;
-import org.murillo.abnf.Rule$transport;
-import org.murillo.abnf.Rule$priority;
-import org.murillo.abnf.Rule$candidate_types;
-import org.murillo.abnf.Rule$rel_addr;
-import org.murillo.abnf.Rule$rel_port;
-import org.murillo.abnf.Rule$extension_att;
-import org.murillo.abnf.Rule$extension_att_name;
-import org.murillo.abnf.Rule$extension_att_value;
-import org.murillo.abnf.Rule$connection_address;
-import org.murillo.abnf.Rule$port;
+import org.murillo.abnf.Rule_candidate_attribute;
+import org.murillo.abnf.Rule_foundation;
+import org.murillo.abnf.Rule_component_id;
+import org.murillo.abnf.Rule_transport;
+import org.murillo.abnf.Rule_priority;
+import org.murillo.abnf.Rule_candidate_types;
+import org.murillo.abnf.Rule_rel_addr;
+import org.murillo.abnf.Rule_rel_port;
+import org.murillo.abnf.Rule_extension_att;
+import org.murillo.abnf.Rule_extension_att_name;
+import org.murillo.abnf.Rule_extension_att_value;
+import org.murillo.abnf.Rule_connection_address;
+import org.murillo.abnf.Rule_port;
 
 import org.murillo.sdp.CandidateAttribute;
 /**
@@ -30,7 +30,7 @@ class CandidateAttributeBuilder extends Builder {
     private CandidateAttribute.Extension extension;
 
     @Override
-    public Object visit(Rule$candidate_attribute rule) {
+    public Object visit(Rule_candidate_attribute rule) {
         //New attr
         candidate = new CandidateAttribute();
         //Generate it
@@ -40,7 +40,7 @@ class CandidateAttributeBuilder extends Builder {
     }
 
    @Override
-    public Object visit(Rule$foundation rule) {
+    public Object visit(Rule_foundation rule) {
         //Get value
         String value = rule.toString();
         //Set type
@@ -50,7 +50,7 @@ class CandidateAttributeBuilder extends Builder {
     }
 
     @Override
-    public Object visit(Rule$component_id rule) {
+    public Object visit(Rule_component_id rule) {
         //Get type
         Integer value = Integer.parseInt(rule.toString());
         //Set type
@@ -60,7 +60,7 @@ class CandidateAttributeBuilder extends Builder {
     }
 
     @Override
-    public Object visit(Rule$transport rule) {
+    public Object visit(Rule_transport rule) {
         //Get value
         String value = rule.toString();
         //Set type
@@ -70,7 +70,7 @@ class CandidateAttributeBuilder extends Builder {
     }
 
     @Override
-    public Object visit(Rule$priority rule) {
+    public Object visit(Rule_priority rule) {
         //Get type
         Integer value = Integer.parseInt(rule.toString());
         //Set type
@@ -80,7 +80,7 @@ class CandidateAttributeBuilder extends Builder {
     }
     
     @Override
-    public Object visit(Rule$connection_address rule) {
+    public Object visit(Rule_connection_address rule) {
         //Get value
         String value = rule.toString();
         //Set type
@@ -90,7 +90,7 @@ class CandidateAttributeBuilder extends Builder {
     }
 
     @Override
-    public Object visit(Rule$port rule) {
+    public Object visit(Rule_port rule) {
          //Get type
         Integer value = Integer.parseInt(rule.toString());
         //Set type
@@ -100,7 +100,7 @@ class CandidateAttributeBuilder extends Builder {
     }
 
     @Override
-    public Object visit(Rule$candidate_types rule) {
+    public Object visit(Rule_candidate_types rule) {
         //Get value
         String value = rule.toString();
         //Set type
@@ -110,7 +110,7 @@ class CandidateAttributeBuilder extends Builder {
     }
 
     @Override
-    public Object visit(Rule$rel_addr rule) {
+    public Object visit(Rule_rel_addr rule) {
         //Get value
         String value = rule.toString();
         //Set type
@@ -120,7 +120,7 @@ class CandidateAttributeBuilder extends Builder {
     }
 
     @Override
-    public Object visit(Rule$rel_port rule) {
+    public Object visit(Rule_rel_port rule) {
         //Get type
         Integer value = Integer.parseInt(rule.toString());
         //Set type
@@ -130,7 +130,7 @@ class CandidateAttributeBuilder extends Builder {
     }
 
     @Override
-    public Object visit(Rule$extension_att rule) {
+    public Object visit(Rule_extension_att rule) {
         //New attr
         extension = new CandidateAttribute.Extension();
         //Generate it
@@ -142,7 +142,7 @@ class CandidateAttributeBuilder extends Builder {
     }
 
     @Override
-    public Object visit(Rule$extension_att_name rule) {
+    public Object visit(Rule_extension_att_name rule) {
         //Get value
         String value = rule.toString();
         //Set type
@@ -152,7 +152,7 @@ class CandidateAttributeBuilder extends Builder {
     }
 
     @Override
-    public Object visit(Rule$extension_att_value rule) {
+    public Object visit(Rule_extension_att_value rule) {
         //Get value
         String value = rule.toString();
         //Set type

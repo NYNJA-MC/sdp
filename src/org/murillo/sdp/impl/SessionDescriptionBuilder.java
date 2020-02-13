@@ -6,21 +6,21 @@ package org.murillo.sdp.impl;
 
 import java.net.URI;
 import java.net.URISyntaxException;
-import org.murillo.abnf.Rule$bandwidth_field;
-import org.murillo.abnf.Rule$connection_field;
-import org.murillo.abnf.Rule$information_field;
-import org.murillo.abnf.Rule$key_field;
-import org.murillo.abnf.Rule$session_description;
-import org.murillo.abnf.Rule$media_description;
-import org.murillo.abnf.Rule$origin_field;
-import org.murillo.abnf.Rule$phone_field;
-import org.murillo.abnf.Rule$attribute_field;
-import org.murillo.abnf.Rule$time_repeat_field;
-import org.murillo.abnf.Rule$proto_version;
-import org.murillo.abnf.Rule$session_name_field;
-import org.murillo.abnf.Rule$email_field;
-import org.murillo.abnf.Rule$uri_field;
-import org.murillo.abnf.Rule$DIGIT;
+import org.murillo.abnf.Rule_bandwidth_field;
+import org.murillo.abnf.Rule_connection_field;
+import org.murillo.abnf.Rule_information_field;
+import org.murillo.abnf.Rule_key_field;
+import org.murillo.abnf.Rule_session_description;
+import org.murillo.abnf.Rule_media_description;
+import org.murillo.abnf.Rule_origin_field;
+import org.murillo.abnf.Rule_phone_field;
+import org.murillo.abnf.Rule_attribute_field;
+import org.murillo.abnf.Rule_time_repeat_field;
+import org.murillo.abnf.Rule_proto_version;
+import org.murillo.abnf.Rule_session_name_field;
+import org.murillo.abnf.Rule_email_field;
+import org.murillo.abnf.Rule_uri_field;
+import org.murillo.abnf.Rule_DIGIT;
 import org.murillo.sdp.Attribute;
 import org.murillo.sdp.Bandwidth;
 import org.murillo.sdp.Connection;
@@ -40,7 +40,7 @@ public class SessionDescriptionBuilder  extends Builder {
     private SessionDescription sdp = null;
 
    @Override
-    public Object visit(Rule$session_description rule) {
+    public Object visit(Rule_session_description rule) {
        //Create object
        sdp = new SessionDescription();
        //Parse all the rules
@@ -50,9 +50,9 @@ public class SessionDescriptionBuilder  extends Builder {
     }
 
     @Override
-    public Object visit(Rule$proto_version rule) {
+    public Object visit(Rule_proto_version rule) {
        //Parse digit
-       Integer version = (Integer)super.visit((Rule$DIGIT)rule.rules.get(2));
+       Integer version = (Integer)super.visit((Rule_DIGIT)rule.rules.get(2));
        //Set it
        sdp.setVersion(version);
        //Return it
@@ -60,7 +60,7 @@ public class SessionDescriptionBuilder  extends Builder {
     }
 
     @Override
-    public Object visit(Rule$origin_field rule) {
+    public Object visit(Rule_origin_field rule) {
         //Create new origin object
         OriginBuilder builder = new OriginBuilder();
         //Get origin
@@ -72,7 +72,7 @@ public class SessionDescriptionBuilder  extends Builder {
     }
 
     @Override
-    public Object visit(Rule$session_name_field rule) {
+    public Object visit(Rule_session_name_field rule) {
         //Create builder
         SessionNameBuilder builder = new SessionNameBuilder();
         //Generate
@@ -84,7 +84,7 @@ public class SessionDescriptionBuilder  extends Builder {
     }
 
     @Override
-    public Object visit(Rule$information_field rule) {
+    public Object visit(Rule_information_field rule) {
         //Create new session name
         InformationBuilder builder = new InformationBuilder();
         //Generate
@@ -96,7 +96,7 @@ public class SessionDescriptionBuilder  extends Builder {
     }
 
     @Override
-    public Object visit(Rule$attribute_field rule) {
+    public Object visit(Rule_attribute_field rule) {
         //Create new session name
         AttributeBuilder builder = new AttributeBuilder();
         //Generate
@@ -108,7 +108,7 @@ public class SessionDescriptionBuilder  extends Builder {
     }
 
     @Override
-    public Object visit(Rule$uri_field rule) {
+    public Object visit(Rule_uri_field rule) {
         URI uri = null;
         //Check size
         if (rule.rules.isEmpty())
@@ -126,7 +126,7 @@ public class SessionDescriptionBuilder  extends Builder {
     }
 
     @Override
-    public Object visit(Rule$email_field rule) {
+    public Object visit(Rule_email_field rule) {
         //Parse it
         String email = rule.rules.get(2).toString();
         //Add it
@@ -136,7 +136,7 @@ public class SessionDescriptionBuilder  extends Builder {
     }
 
     @Override
-    public Object visit(Rule$phone_field rule) {
+    public Object visit(Rule_phone_field rule) {
         //Parse it
         String phone = rule.rules.get(2).toString();
         //Add it
@@ -146,7 +146,7 @@ public class SessionDescriptionBuilder  extends Builder {
     }
 
     @Override
-    public Object visit(Rule$connection_field rule) {
+    public Object visit(Rule_connection_field rule) {
         //Create builder
         ConnectionBuilder builder = new ConnectionBuilder();
         //Parse it
@@ -158,7 +158,7 @@ public class SessionDescriptionBuilder  extends Builder {
     }
 
     @Override
-    public Object visit(Rule$bandwidth_field rule) {
+    public Object visit(Rule_bandwidth_field rule) {
         //Create builder
         BandwitdhBuilder builder = new BandwitdhBuilder();
         //Generate it
@@ -170,7 +170,7 @@ public class SessionDescriptionBuilder  extends Builder {
     }
 
     @Override
-    public Object visit(Rule$time_repeat_field rule) {
+    public Object visit(Rule_time_repeat_field rule) {
         //Create builder
         TimeBuilder builder = new TimeBuilder();
         //Generate it
@@ -182,7 +182,7 @@ public class SessionDescriptionBuilder  extends Builder {
     }
 
     @Override
-    public Object visit(Rule$key_field rule) {
+    public Object visit(Rule_key_field rule) {
         //Create builder
         KeyBuilder builder = new KeyBuilder();
         //Generate it
@@ -194,7 +194,7 @@ public class SessionDescriptionBuilder  extends Builder {
     }
 
     @Override
-    public Object visit(Rule$media_description rule) {
+    public Object visit(Rule_media_description rule) {
         //Create builder
         MediaDescriptionBuilder builder = new MediaDescriptionBuilder();
         //Generate it

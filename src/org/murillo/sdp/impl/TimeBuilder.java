@@ -6,9 +6,9 @@
 package org.murillo.sdp.impl;
 
 import org.murillo.sdp.Time;
-import org.murillo.abnf.Rule$time_repeat_field;
-import org.murillo.abnf.Rule$start_time;
-import org.murillo.abnf.Rule$stop_time;
+import org.murillo.abnf.Rule_time_repeat_field;
+import org.murillo.abnf.Rule_start_time;
+import org.murillo.abnf.Rule_stop_time;
 /**
  *
  * @author Sergio
@@ -18,7 +18,7 @@ public class TimeBuilder extends Builder{
     private Time time;
 
     @Override
-    public Object visit(Rule$time_repeat_field rule) {
+    public Object visit(Rule_time_repeat_field rule) {
         //Create object
         time = new Time();
         //Generate it
@@ -28,7 +28,7 @@ public class TimeBuilder extends Builder{
     }
 
     @Override
-    public Object visit(Rule$start_time rule) {
+    public Object visit(Rule_start_time rule) {
         //Get start
         Integer start = Integer.parseInt(rule.toString());
         //Set start
@@ -38,7 +38,7 @@ public class TimeBuilder extends Builder{
     }
 
     @Override
-    public Object visit(Rule$stop_time rule) {
+    public Object visit(Rule_stop_time rule) {
         //Get stop
         Integer stop = Integer.parseInt(rule.toString());
         //Set start

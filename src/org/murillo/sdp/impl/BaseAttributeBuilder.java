@@ -6,9 +6,9 @@
 package org.murillo.sdp.impl;
 
 import org.murillo.sdp.BaseAttribute;
-import org.murillo.abnf.Rule$attribute;
-import org.murillo.abnf.Rule$att_field;
-import org.murillo.abnf.Rule$att_value;
+import org.murillo.abnf.Rule_attribute;
+import org.murillo.abnf.Rule_att_field;
+import org.murillo.abnf.Rule_att_value;
 /**
  *
  * @author Sergio
@@ -18,7 +18,7 @@ class BaseAttributeBuilder extends Builder {
     private BaseAttribute attr;
 
     @Override
-    public Object visit(Rule$attribute rule) {
+    public Object visit(Rule_attribute rule) {
         //New attr
         attr = new BaseAttribute();
         //Generate it
@@ -28,7 +28,7 @@ class BaseAttributeBuilder extends Builder {
     }
 
     @Override
-    public Object visit(Rule$att_field rule) {
+    public Object visit(Rule_att_field rule) {
         //Get type
         String field = rule.toString();
         //Set type
@@ -38,7 +38,7 @@ class BaseAttributeBuilder extends Builder {
     }
 
     @Override
-    public Object visit(Rule$att_value rule) {
+    public Object visit(Rule_att_value rule) {
         //Get type
         String value = rule.toString();
         //Set type

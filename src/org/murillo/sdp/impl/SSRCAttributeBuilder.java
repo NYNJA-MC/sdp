@@ -6,10 +6,10 @@
 package org.murillo.sdp.impl;
 
 import org.murillo.sdp.SSRCAttribute;
-import org.murillo.abnf.Rule$ssrc_attr;
-import org.murillo.abnf.Rule$ssrc_id;
-import org.murillo.abnf.Rule$att_field;
-import org.murillo.abnf.Rule$att_value;
+import org.murillo.abnf.Rule_ssrc_attr;
+import org.murillo.abnf.Rule_ssrc_id;
+import org.murillo.abnf.Rule_att_field;
+import org.murillo.abnf.Rule_att_value;
 /**
  *
  * @author Sergio
@@ -19,7 +19,7 @@ class SSRCAttributeBuilder extends Builder {
     private SSRCAttribute ssrc;
 
     @Override
-    public Object visit(Rule$ssrc_attr rule) {
+    public Object visit(Rule_ssrc_attr rule) {
         //New attr
         ssrc = new SSRCAttribute();
         //Generate it
@@ -29,7 +29,7 @@ class SSRCAttributeBuilder extends Builder {
     }
 
     @Override
-    public Object visit(Rule$ssrc_id rule) {
+    public Object visit(Rule_ssrc_id rule) {
         //Get type
         Long ssrcId = Long.parseLong(rule.toString());
         //Set type
@@ -39,7 +39,7 @@ class SSRCAttributeBuilder extends Builder {
     }
     
     @Override
-    public Object visit(Rule$att_field rule) {
+    public Object visit(Rule_att_field rule) {
         //Get type
         String field = rule.toString();
         //Set type
@@ -49,7 +49,7 @@ class SSRCAttributeBuilder extends Builder {
     }
 
     @Override
-    public Object visit(Rule$att_value rule) {
+    public Object visit(Rule_att_value rule) {
         //Get type
         String value = rule.toString();
         //Set type

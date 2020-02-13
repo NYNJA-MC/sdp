@@ -2,8 +2,8 @@
  * ParserException.java
  * -----------------------------------------------------------------------------
  *
- * Producer : com.parse2.aparse.Parser 2.2
- * Produced : Thu Feb 13 17:43:10 EET 2020
+ * Producer : com.parse2.aparse.Parser 2.5
+ * Produced : Thu Feb 13 17:50:21 EET 2020
  *
  * -----------------------------------------------------------------------------
  */
@@ -15,8 +15,8 @@ import java.util.Stack;
 /**
  * <p>Signals that a parse failure has occurred.</p>
  * 
- * <p>Producer : com.parse2.aparse.Parser 2.2<br/>
- * Produced : Thu Feb 13 17:43:10 EET 2020</p>
+ * <p>Producer : com.parse2.aparse.Parser 2.5<br/>
+ * Produced : Thu Feb 13 17:50:21 EET 2020</p>
  */
 
 public class ParserException extends Exception
@@ -48,7 +48,7 @@ public class ParserException extends Exception
 
     int start = (index < 30) ? 0: index - 30;
     int end = (text.length() < index + 30) ? text.length(): index + 30;
-    text60 = text.substring(start, end).replaceAll("[^\\p{Print}]", " ");
+    text60 = text.substring(start, end).replaceAll("[\\x00-\\x1F]", " ");
     index60 = (index < 30) ? index : 30;
   }
 

@@ -6,11 +6,11 @@
 package org.murillo.sdp.impl;
 
 import org.murillo.sdp.ExtMapAttribute;
-import org.murillo.abnf.Rule$extmap_attribute;
-import org.murillo.abnf.Rule$direction;
-import org.murillo.abnf.Rule$extension_identifier;
-import org.murillo.abnf.Rule$extension_name;
-import org.murillo.abnf.Rule$extension_attributes;
+import org.murillo.abnf.Rule_extmap_attribute;
+import org.murillo.abnf.Rule_direction;
+import org.murillo.abnf.Rule_extension_identifier;
+import org.murillo.abnf.Rule_extension_name;
+import org.murillo.abnf.Rule_extension_attributes;
 
 /**
  *
@@ -21,7 +21,7 @@ public class ExtMapAttributeBuilder extends Builder {
     ExtMapAttribute extmap;
 
     @Override
-    public Object visit(Rule$extmap_attribute rule) {
+    public Object visit(Rule_extmap_attribute rule) {
         //New attr
         extmap = new ExtMapAttribute();
         //Generate it
@@ -31,7 +31,7 @@ public class ExtMapAttributeBuilder extends Builder {
     }
 
    @Override
-    public Object visit(Rule$direction rule) {
+    public Object visit(Rule_direction rule) {
         //Get value
         String value = rule.toString();
         //Set type
@@ -41,7 +41,7 @@ public class ExtMapAttributeBuilder extends Builder {
     }
 
     @Override
-    public Object visit(Rule$extension_identifier rule) {
+    public Object visit(Rule_extension_identifier rule) {
         //Get type
         Integer value = Integer.parseInt(rule.toString());
         //Set type
@@ -51,7 +51,7 @@ public class ExtMapAttributeBuilder extends Builder {
     }
 
     @Override
-    public Object visit(Rule$extension_name rule) {
+    public Object visit(Rule_extension_name rule) {
         //Get value
         String value = rule.toString();
         //Set type
@@ -61,7 +61,7 @@ public class ExtMapAttributeBuilder extends Builder {
     }
 
     @Override
-    public Object visit(Rule$extension_attributes rule) {
+    public Object visit(Rule_extension_attributes rule) {
         //Get value
         String value = rule.toString();
         //Set type

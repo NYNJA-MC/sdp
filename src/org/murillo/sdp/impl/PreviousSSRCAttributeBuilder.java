@@ -6,8 +6,8 @@
 package org.murillo.sdp.impl;
 
 import org.murillo.sdp.PreviousSSRCAttribute;
-import  org.murillo.abnf.Rule$previous_ssrc_attr;
-import  org.murillo.abnf.Rule$ssrc_id;
+import  org.murillo.abnf.Rule_previous_ssrc_attr;
+import  org.murillo.abnf.Rule_ssrc_id;
 
 /**
  *
@@ -18,7 +18,7 @@ class PreviousSSRCAttributeBuilder extends Builder {
     private PreviousSSRCAttribute previous;
 
     @Override
-    public Object visit(Rule$previous_ssrc_attr rule) {
+    public Object visit(Rule_previous_ssrc_attr rule) {
         //New attr
         previous = new PreviousSSRCAttribute();
         //Generate it
@@ -28,7 +28,7 @@ class PreviousSSRCAttributeBuilder extends Builder {
     }
 
     @Override
-    public Object visit(Rule$ssrc_id rule) {
+    public Object visit(Rule_ssrc_id rule) {
         //Get value
         String ssrc = rule.toString();
         //Set value

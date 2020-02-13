@@ -5,11 +5,11 @@
 
 package org.murillo.sdp.impl;
 
-import org.murillo.abnf.Rule$rtpmap_attr;
-import org.murillo.abnf.Rule$fmt;
-import org.murillo.abnf.Rule$name;
-import org.murillo.abnf.Rule$rate;
-import org.murillo.abnf.Rule$parameters;
+import org.murillo.abnf.Rule_rtpmap_attr;
+import org.murillo.abnf.Rule_fmt;
+import org.murillo.abnf.Rule_name;
+import org.murillo.abnf.Rule_rate;
+import org.murillo.abnf.Rule_parameters;
 import org.murillo.sdp.RTPMapAttribute;
 
 /**
@@ -20,7 +20,7 @@ public class RTPMapAttributeBuilder extends Builder {
     private RTPMapAttribute attr;
 
     @Override
-    public Object visit(Rule$rtpmap_attr rule) {
+    public Object visit(Rule_rtpmap_attr rule) {
         //New attr
         attr = new RTPMapAttribute();
         //Generate it
@@ -30,7 +30,7 @@ public class RTPMapAttributeBuilder extends Builder {
     }
 
     @Override
-    public Object visit(Rule$fmt rule) {
+    public Object visit(Rule_fmt rule) {
         //Get type
         Integer fmt = Integer.parseInt(rule.toString());
         //Set type
@@ -40,7 +40,7 @@ public class RTPMapAttributeBuilder extends Builder {
     }
 
     @Override
-    public Object visit(Rule$name rule) {
+    public Object visit(Rule_name rule) {
         //Get type
         String name = rule.toString();
         //Set type
@@ -50,7 +50,7 @@ public class RTPMapAttributeBuilder extends Builder {
     }
 
     @Override
-    public Object visit(Rule$rate rule) {
+    public Object visit(Rule_rate rule) {
         //Get type
         Integer rate = Integer.parseInt(rule.toString());
         //Set type
@@ -60,7 +60,7 @@ public class RTPMapAttributeBuilder extends Builder {
     }
 
     @Override
-    public Object visit(Rule$parameters rule) {
+    public Object visit(Rule_parameters rule) {
         //Get type
         String parameters = rule.toString();
         //Set type

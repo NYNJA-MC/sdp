@@ -2,8 +2,8 @@
  * ParserContext.java
  * -----------------------------------------------------------------------------
  *
- * Producer : com.parse2.aparse.Parser 2.2
- * Produced : Thu Feb 13 17:43:10 EET 2020
+ * Producer : com.parse2.aparse.Parser 2.5
+ * Produced : Thu Feb 13 17:50:21 EET 2020
  *
  * -----------------------------------------------------------------------------
  */
@@ -45,7 +45,7 @@ public class ParserContext
     if (traceOn)
     {
       System.out.println("-> " + ++level + ": " + rulename + "(" + (trace != null ? trace : "") + ")");
-      System.out.println(index + ": " + text.substring(index, index + 10 > text.length() ? text.length() : index + 10).replaceAll("[^\\p{Print}]", " "));
+      System.out.println(index + ": " + text.substring(index, index + 10 > text.length() ? text.length() : index + 10).replaceAll("[\\x00-\\x1F]", " "));
     }
   }
 

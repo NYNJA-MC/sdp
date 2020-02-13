@@ -6,11 +6,11 @@
 package org.murillo.sdp.impl;
 
 import org.murillo.sdp.Key;
-import org.murillo.abnf.Rule$key_field;
-import org.murillo.abnf.Rule$clear_key_type;
-import org.murillo.abnf.Rule$prompt_key_type;
-import org.murillo.abnf.Rule$base64_key_type;
-import org.murillo.abnf.Rule$uri_key_type;
+import org.murillo.abnf.Rule_key_field;
+import org.murillo.abnf.Rule_clear_key_type;
+import org.murillo.abnf.Rule_prompt_key_type;
+import org.murillo.abnf.Rule_base64_key_type;
+import org.murillo.abnf.Rule_uri_key_type;
 /**
  *
  * @author Sergio
@@ -20,7 +20,7 @@ class KeyBuilder extends Builder {
    private Key key;
 
     @Override
-    public Object visit(Rule$key_field rule) {
+    public Object visit(Rule_key_field rule) {
         //New kwy
         key = new Key();
         //Generate it
@@ -30,7 +30,7 @@ class KeyBuilder extends Builder {
     }
 
     @Override
-    public Object visit(Rule$prompt_key_type rule) {
+    public Object visit(Rule_prompt_key_type rule) {
         //Get type
         String type = rule.toString();
         //Set type
@@ -40,7 +40,7 @@ class KeyBuilder extends Builder {
     }
 
     @Override
-    public Object visit(Rule$clear_key_type rule) {
+    public Object visit(Rule_clear_key_type rule) {
         //Get type and key
         String type = rule.rules.get(0).toString();
         String k = rule.rules.get(2).toString();
@@ -53,7 +53,7 @@ class KeyBuilder extends Builder {
     }
 
     @Override
-    public Object visit(Rule$base64_key_type rule) {
+    public Object visit(Rule_base64_key_type rule) {
         //Get type and key
         String type = rule.rules.get(0).toString();
         String k = rule.rules.get(2).toString();
@@ -66,7 +66,7 @@ class KeyBuilder extends Builder {
     }
 
     @Override
-    public Object visit(Rule$uri_key_type rule) {
+    public Object visit(Rule_uri_key_type rule) {
         //Get type and key
         String type = rule.rules.get(0).toString();
         String k = rule.rules.get(2).toString();

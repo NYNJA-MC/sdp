@@ -6,10 +6,10 @@
 package org.murillo.sdp.impl;
 
 import org.murillo.sdp.Connection;
-import org.murillo.abnf.Rule$connection_field;
-import org.murillo.abnf.Rule$addrtype;
-import org.murillo.abnf.Rule$nettype;
-import org.murillo.abnf.Rule$connection_address;
+import org.murillo.abnf.Rule_connection_field;
+import org.murillo.abnf.Rule_addrtype;
+import org.murillo.abnf.Rule_nettype;
+import org.murillo.abnf.Rule_connection_address;
 /**
  *
  * @author Sergio
@@ -19,7 +19,7 @@ class ConnectionBuilder extends Builder {
     private Connection conn;
 
     @Override
-    public Object visit(Rule$connection_field rule) {
+    public Object visit(Rule_connection_field rule) {
         //Create object
         conn = new Connection();
         //Generate
@@ -30,7 +30,7 @@ class ConnectionBuilder extends Builder {
 
     
     @Override
-    public Object visit(Rule$nettype rule) {
+    public Object visit(Rule_nettype rule) {
         //Generate
         String nettype = rule.toString();
         //Set it
@@ -40,7 +40,7 @@ class ConnectionBuilder extends Builder {
     }
 
     @Override
-    public Object visit(Rule$addrtype rule) {
+    public Object visit(Rule_addrtype rule) {
         //Generate
         String addrtype = rule.toString();
         //Set
@@ -50,7 +50,7 @@ class ConnectionBuilder extends Builder {
     }
 
     @Override
-    public Object visit(Rule$connection_address rule) {
+    public Object visit(Rule_connection_address rule) {
         //Generate
         String address = rule.toString();
         //Set it

@@ -6,8 +6,8 @@
 package org.murillo.sdp.impl;
 
 import org.murillo.sdp.CNameAttribute;
-import org.murillo.abnf.Rule$cname;
-import org.murillo.abnf.Rule$cname_attr;
+import org.murillo.abnf.Rule_cname;
+import org.murillo.abnf.Rule_cname_attr;
 
 /**
  *
@@ -18,7 +18,7 @@ class CNameAttributeBuilder extends Builder {
     private CNameAttribute attr;
 
     @Override
-    public Object visit(Rule$cname_attr rule) {
+    public Object visit(Rule_cname_attr rule) {
         //New attr
         attr = new CNameAttribute();
         //Generate it
@@ -28,7 +28,7 @@ class CNameAttributeBuilder extends Builder {
     }
 
     @Override
-    public Object visit(Rule$cname rule) {
+    public Object visit(Rule_cname rule) {
         //Get value
         String cname = rule.toString();
         //Set value

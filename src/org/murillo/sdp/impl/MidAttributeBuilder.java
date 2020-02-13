@@ -6,8 +6,8 @@
 package org.murillo.sdp.impl;
 
 import org.murillo.sdp.MidAttribute;
-import org.murillo.abnf.Rule$mid_attr;
-import org.murillo.abnf.Rule$identification_tag;
+import org.murillo.abnf.Rule_mid_attr;
+import org.murillo.abnf.Rule_identification_tag;
 /**
  *
  * @author Sergio
@@ -16,7 +16,7 @@ class MidAttributeBuilder extends Builder {
     private MidAttribute mid;
 
     @Override
-    public Object visit(Rule$mid_attr rule) {
+    public Object visit(Rule_mid_attr rule) {
         //New attr
         mid = new MidAttribute();
         //Generate it
@@ -26,7 +26,7 @@ class MidAttributeBuilder extends Builder {
     }
 
     @Override
-    public Object visit(Rule$identification_tag rule) {
+    public Object visit(Rule_identification_tag rule) {
         //Get type
         String tag = rule.toString();
         //Set type

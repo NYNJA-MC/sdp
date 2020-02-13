@@ -5,10 +5,10 @@
 
 package org.murillo.sdp.impl;
 
-import org.murillo.abnf.Rule$app;
-import org.murillo.abnf.Rule$sctpmap_attr;
-import org.murillo.abnf.Rule$sctpmap_number;
-import org.murillo.abnf.Rule$streams;
+import org.murillo.abnf.Rule_app;
+import org.murillo.abnf.Rule_sctpmap_attr;
+import org.murillo.abnf.Rule_sctpmap_number;
+import org.murillo.abnf.Rule_streams;
 import org.murillo.sdp.SCTPMapAttribute;
 /**
  *
@@ -19,7 +19,7 @@ class SCTPMapAttributeBuilder extends Builder {
 	private SCTPMapAttribute sctpmap;
 
 	@Override
-	public Object visit(Rule$sctpmap_attr rule) {
+	public Object visit(Rule_sctpmap_attr rule) {
 		 //New attr
 		sctpmap = new SCTPMapAttribute();
 		//Generate it
@@ -29,7 +29,7 @@ class SCTPMapAttributeBuilder extends Builder {
 	}
 
 	@Override
-	public Object visit(Rule$sctpmap_number rule) {
+	public Object visit(Rule_sctpmap_number rule) {
 		 //Get number
 		Integer value = Integer.parseInt(rule.toString());
 		//Set type
@@ -39,7 +39,7 @@ class SCTPMapAttributeBuilder extends Builder {
 	}
 
 	@Override
-	public Object visit(Rule$app rule) {
+	public Object visit(Rule_app rule) {
 		 //Get app
 		String value = rule.toString();
 		//Set type
@@ -50,7 +50,7 @@ class SCTPMapAttributeBuilder extends Builder {
 
 
 	@Override
-	public Object visit(Rule$streams rule) {
+	public Object visit(Rule_streams rule) {
 		 //Get number
 		Integer value = Integer.parseInt(rule.toString());
 		//Set type

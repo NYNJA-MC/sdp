@@ -5,13 +5,13 @@
 
 package org.murillo.sdp.impl;
 
-import org.murillo.abnf.Rule$crypto_attribute;
-import org.murillo.abnf.Rule$tag;
-import org.murillo.abnf.Rule$crypto_suite;
-import org.murillo.abnf.Rule$session_param;
-import org.murillo.abnf.Rule$key_param;
-import org.murillo.abnf.Rule$key_method;
-import org.murillo.abnf.Rule$key_info;
+import org.murillo.abnf.Rule_crypto_attribute;
+import org.murillo.abnf.Rule_tag;
+import org.murillo.abnf.Rule_crypto_suite;
+import org.murillo.abnf.Rule_session_param;
+import org.murillo.abnf.Rule_key_param;
+import org.murillo.abnf.Rule_key_method;
+import org.murillo.abnf.Rule_key_info;
 import org.murillo.sdp.CryptoAttribute;
 /**
  *
@@ -23,7 +23,7 @@ class CryptoAttributeBuilder extends Builder {
     private CryptoAttribute.KeyParam param;
 
     @Override
-    public Object visit(Rule$crypto_attribute rule) {
+    public Object visit(Rule_crypto_attribute rule) {
         //New attr
         crypto = new CryptoAttribute();
         //Generate it
@@ -33,7 +33,7 @@ class CryptoAttributeBuilder extends Builder {
     }
 
     @Override
-    public Object visit(Rule$tag rule) {
+    public Object visit(Rule_tag rule) {
         //Get type
         Integer tag = Integer.parseInt(rule.toString());
         //Set type
@@ -43,7 +43,7 @@ class CryptoAttributeBuilder extends Builder {
     }
     
     @Override
-    public Object visit(Rule$crypto_suite rule) {
+    public Object visit(Rule_crypto_suite rule) {
         //Get suite
         String suite = rule.toString();
         //Set type
@@ -53,7 +53,7 @@ class CryptoAttributeBuilder extends Builder {
     }
 
     @Override
-    public Object visit(Rule$session_param rule) {
+    public Object visit(Rule_session_param rule) {
         //Get type
         String sessionParam = rule.toString();
         //Set type
@@ -63,7 +63,7 @@ class CryptoAttributeBuilder extends Builder {
     }
 
     @Override
-    public Object visit(Rule$key_param rule) {
+    public Object visit(Rule_key_param rule) {
         //New attr
         param = new CryptoAttribute.KeyParam();
         //Generate it
@@ -75,7 +75,7 @@ class CryptoAttributeBuilder extends Builder {
     }
 
     @Override
-    public Object visit(Rule$key_method rule) {
+    public Object visit(Rule_key_method rule) {
         //Get method
         String method = rule.toString();
         //Set type
@@ -85,7 +85,7 @@ class CryptoAttributeBuilder extends Builder {
     }
 
     @Override
-    public Object visit(Rule$key_info rule) {
+    public Object visit(Rule_key_info rule) {
         //Get info
         String info = rule.toString();
         //Set type

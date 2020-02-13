@@ -5,21 +5,21 @@
 
 package org.murillo.sdp.impl;
 
-import org.murillo.abnf.Rule$attribute_field;
-import org.murillo.abnf.Rule$mid_attr;
-import org.murillo.abnf.Rule$group_attr;
-import org.murillo.abnf.Rule$ssrc_attr;
-import org.murillo.abnf.Rule$ssrc_group_attr;
-import org.murillo.abnf.Rule$cname_attr;
-import org.murillo.abnf.Rule$previous_ssrc_attr;
-import org.murillo.abnf.Rule$rtpmap_attr;
-import org.murillo.abnf.Rule$attribute;
-import org.murillo.abnf.Rule$fmtp_attr;
-import org.murillo.abnf.Rule$crypto_attribute;
-import org.murillo.abnf.Rule$candidate_attribute;
-import org.murillo.abnf.Rule$extmap_attribute;
-import org.murillo.abnf.Rule$fingerprint_attribute;
-import org.murillo.abnf.Rule$sctpmap_attr;
+import org.murillo.abnf.Rule_attribute_field;
+import org.murillo.abnf.Rule_mid_attr;
+import org.murillo.abnf.Rule_group_attr;
+import org.murillo.abnf.Rule_ssrc_attr;
+import org.murillo.abnf.Rule_ssrc_group_attr;
+import org.murillo.abnf.Rule_cname_attr;
+import org.murillo.abnf.Rule_previous_ssrc_attr;
+import org.murillo.abnf.Rule_rtpmap_attr;
+import org.murillo.abnf.Rule_attribute;
+import org.murillo.abnf.Rule_fmtp_attr;
+import org.murillo.abnf.Rule_crypto_attribute;
+import org.murillo.abnf.Rule_candidate_attribute;
+import org.murillo.abnf.Rule_extmap_attribute;
+import org.murillo.abnf.Rule_fingerprint_attribute;
+import org.murillo.abnf.Rule_sctpmap_attr;
 import org.murillo.sdp.Attribute;
 import org.murillo.sdp.BaseAttribute;
 import org.murillo.sdp.CNameAttribute;
@@ -46,7 +46,7 @@ class AttributeBuilder extends Builder {
     private Attribute attr;
 
     @Override
-    public Object visit(Rule$attribute_field rule) {
+    public Object visit(Rule_attribute_field rule) {
         //Reset
         attr = null;
         //Generate
@@ -56,7 +56,7 @@ class AttributeBuilder extends Builder {
     }
 
     @Override
-    public Object visit(Rule$mid_attr rule) {
+    public Object visit(Rule_mid_attr rule) {
         //Get builder
         MidAttributeBuilder builder = new MidAttributeBuilder();
         //build it
@@ -66,7 +66,7 @@ class AttributeBuilder extends Builder {
     }
 
     @Override
-    public Object visit(Rule$group_attr rule) {
+    public Object visit(Rule_group_attr rule) {
         //Get builder
         GroupAttributeBuilder builder = new GroupAttributeBuilder();
         //build it
@@ -76,7 +76,7 @@ class AttributeBuilder extends Builder {
     }
 
     @Override
-    public Object visit(Rule$ssrc_attr rule) {
+    public Object visit(Rule_ssrc_attr rule) {
         //Get builder
         SSRCAttributeBuilder builder = new SSRCAttributeBuilder();
         //build it
@@ -86,7 +86,7 @@ class AttributeBuilder extends Builder {
     }
 
     @Override
-    public Object visit(Rule$rtpmap_attr rule) {
+    public Object visit(Rule_rtpmap_attr rule) {
         //Get builder
         RTPMapAttributeBuilder builder = new RTPMapAttributeBuilder();
         //build it
@@ -96,7 +96,7 @@ class AttributeBuilder extends Builder {
     }
 
     @Override
-    public Object visit(Rule$fmtp_attr rule) {
+    public Object visit(Rule_fmtp_attr rule) {
         //Get builder
         FormatAttributeBuilder builder = new FormatAttributeBuilder();
         //build it
@@ -106,7 +106,7 @@ class AttributeBuilder extends Builder {
     }
 
     @Override
-    public Object visit(Rule$ssrc_group_attr rule) {
+    public Object visit(Rule_ssrc_group_attr rule) {
         //Get builder
         SSRCGroupAttributeBuilder builder = new SSRCGroupAttributeBuilder();
         //build it
@@ -116,7 +116,7 @@ class AttributeBuilder extends Builder {
     }
 
     @Override
-    public Object visit(Rule$cname_attr rule) {
+    public Object visit(Rule_cname_attr rule) {
         //Get builder
         CNameAttributeBuilder builder = new CNameAttributeBuilder();
         //build it
@@ -126,7 +126,7 @@ class AttributeBuilder extends Builder {
     }
 
     @Override
-    public Object visit(Rule$previous_ssrc_attr rule) {
+    public Object visit(Rule_previous_ssrc_attr rule) {
         //Get builder
         PreviousSSRCAttributeBuilder builder = new PreviousSSRCAttributeBuilder();
         //build it
@@ -136,7 +136,7 @@ class AttributeBuilder extends Builder {
     }
 
     @Override
-    public Object visit(Rule$attribute rule) {
+    public Object visit(Rule_attribute rule) {
         //Get builder
         BaseAttributeBuilder builder = new BaseAttributeBuilder();
         //build it
@@ -146,7 +146,7 @@ class AttributeBuilder extends Builder {
     }
 
     @Override
-    public Object visit(Rule$crypto_attribute rule) {
+    public Object visit(Rule_crypto_attribute rule) {
         //Get builder
         CryptoAttributeBuilder builder = new CryptoAttributeBuilder();
         //build it
@@ -156,7 +156,7 @@ class AttributeBuilder extends Builder {
     }
 
     @Override
-    public Object visit(Rule$candidate_attribute rule) {
+    public Object visit(Rule_candidate_attribute rule) {
         //Get builder
         CandidateAttributeBuilder builder = new CandidateAttributeBuilder();
         //build it
@@ -166,7 +166,7 @@ class AttributeBuilder extends Builder {
     }
     
     @Override
-    public Object visit(Rule$extmap_attribute rule) {
+    public Object visit(Rule_extmap_attribute rule) {
         //Get builder
         ExtMapAttributeBuilder builder = new ExtMapAttributeBuilder();
         //build it
@@ -176,7 +176,7 @@ class AttributeBuilder extends Builder {
     }
 
     @Override
-    public Object visit(Rule$fingerprint_attribute rule) {
+    public Object visit(Rule_fingerprint_attribute rule) {
 	//Get builder
         FingerprintAttributeBuilder builder = new FingerprintAttributeBuilder();
         //build it
@@ -186,7 +186,7 @@ class AttributeBuilder extends Builder {
     }
     
     @Override
-    public Object visit(Rule$sctpmap_attr rule) {
+    public Object visit(Rule_sctpmap_attr rule) {
 	//Get builder
         SCTPMapAttributeBuilder builder = new SCTPMapAttributeBuilder();
         //build it
