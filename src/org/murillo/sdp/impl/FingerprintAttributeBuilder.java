@@ -5,9 +5,9 @@
 
 package org.murillo.sdp.impl;
 
-import org.murillo.abnf.Rule$fingerprint_attribute;
-import org.murillo.abnf.Rule$hash_func;
-import org.murillo.abnf.Rule$fingerprint;
+import org.murillo.abnf.Rule_fingerprint_attribute;
+import org.murillo.abnf.Rule_hash_func;
+import org.murillo.abnf.Rule_fingerprint;
 import org.murillo.sdp.FingerprintAttribute;
 /**
  *
@@ -18,7 +18,7 @@ class FingerprintAttributeBuilder extends Builder {
     private FingerprintAttribute fingerprint;
 
     @Override
-    public Object visit(Rule$fingerprint_attribute rule) {
+    public Object visit(Rule_fingerprint_attribute rule) {
         //New attr
         fingerprint = new FingerprintAttribute();
         //Generate it
@@ -28,7 +28,7 @@ class FingerprintAttributeBuilder extends Builder {
     }
 
     @Override
-    public Object visit(Rule$hash_func rule) {
+    public Object visit(Rule_hash_func rule) {
         //Get hash func
         String value = rule.toString();
         //Set type
@@ -38,7 +38,7 @@ class FingerprintAttributeBuilder extends Builder {
     }
     
     @Override
-    public Object visit(Rule$fingerprint rule) {
+    public Object visit(Rule_fingerprint rule) {
         //Get fingerprint
         String value = rule.toString();
         //Set type

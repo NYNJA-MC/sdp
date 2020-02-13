@@ -5,9 +5,9 @@
 
 package org.murillo.sdp.impl;
 import  org.murillo.sdp.Bandwidth;
-import  org.murillo.abnf.Rule$bandwidth;
-import  org.murillo.abnf.Rule$bandwidth_field;
-import  org.murillo.abnf.Rule$bwtype;
+import  org.murillo.abnf.Rule_bandwidth;
+import  org.murillo.abnf.Rule_bandwidth_field;
+import  org.murillo.abnf.Rule_bwtype;
 
 /**
  *
@@ -18,7 +18,7 @@ class BandwitdhBuilder extends Builder {
     private Bandwidth bandwidth;
 
     @Override
-    public Object visit(Rule$bandwidth_field rule) {
+    public Object visit(Rule_bandwidth_field rule) {
         //Create object
         bandwidth = new Bandwidth();
         //Generate
@@ -29,7 +29,7 @@ class BandwitdhBuilder extends Builder {
 
 
     @Override
-    public Object visit(Rule$bandwidth rule) {
+    public Object visit(Rule_bandwidth rule) {
         //Generate
         String b = rule.toString();
         //Set it
@@ -39,7 +39,7 @@ class BandwitdhBuilder extends Builder {
     }
 
     @Override
-    public Object visit(Rule$bwtype rule) {
+    public Object visit(Rule_bwtype rule) {
         //Generate
         String type = rule.toString();
         //Set

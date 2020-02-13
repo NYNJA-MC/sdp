@@ -5,14 +5,14 @@
 
 package org.murillo.sdp.impl;
 
-import org.murillo.abnf.Rule$origin_field;
-import org.murillo.abnf.Rule$addrtype;
-import org.murillo.abnf.Rule$nettype;
-import org.murillo.abnf.Rule$sess_id;
-import org.murillo.abnf.Rule$sess_version;
-import org.murillo.abnf.Rule$userinfo;
-import org.murillo.abnf.Rule$username;
-import org.murillo.abnf.Rule$unicast_address;
+import org.murillo.abnf.Rule_origin_field;
+import org.murillo.abnf.Rule_addrtype;
+import org.murillo.abnf.Rule_nettype;
+import org.murillo.abnf.Rule_sess_id;
+import org.murillo.abnf.Rule_sess_version;
+import org.murillo.abnf.Rule_userinfo;
+import org.murillo.abnf.Rule_username;
+import org.murillo.abnf.Rule_unicast_address;
 import org.murillo.sdp.Origin;
 
 /**
@@ -24,7 +24,7 @@ class OriginBuilder extends Builder {
     private Origin origin;
 
     @Override
-    public Object visit(Rule$origin_field rule) {
+    public Object visit(Rule_origin_field rule) {
         //Create object
         origin = new Origin();
         //Generate
@@ -34,7 +34,7 @@ class OriginBuilder extends Builder {
     }
 
     @Override
-    public Object visit(Rule$username rule) {
+    public Object visit(Rule_username rule) {
         //Generate
         String username = rule.toString();
         //Set it
@@ -44,7 +44,7 @@ class OriginBuilder extends Builder {
     }
 
     @Override
-    public Object visit(Rule$sess_id rule) {
+    public Object visit(Rule_sess_id rule) {
         //Generate
         Long sessId = Long.parseLong(rule.toString());
         //Set it
@@ -54,7 +54,7 @@ class OriginBuilder extends Builder {
     }
 
     @Override
-    public Object visit(Rule$sess_version rule) {
+    public Object visit(Rule_sess_version rule) {
         //Generate
         Long sessVersion = Long.parseLong(rule.toString());
         //Sset it
@@ -64,7 +64,7 @@ class OriginBuilder extends Builder {
     }
 
     @Override
-    public Object visit(Rule$nettype rule) {
+    public Object visit(Rule_nettype rule) {
         //Generate
         String nettype = rule.toString();
         //Set it
@@ -74,7 +74,7 @@ class OriginBuilder extends Builder {
     }
 
     @Override
-    public Object visit(Rule$addrtype rule) {
+    public Object visit(Rule_addrtype rule) {
         //Generate
         String addrtype = rule.toString();
         //Set
@@ -84,7 +84,7 @@ class OriginBuilder extends Builder {
     }
 
     @Override
-    public Object visit(Rule$unicast_address rule) {
+    public Object visit(Rule_unicast_address rule) {
         //Generate
         String address = rule.toString();
         //Set it

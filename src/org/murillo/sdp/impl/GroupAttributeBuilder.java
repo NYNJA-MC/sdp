@@ -4,9 +4,9 @@
  */
 
 package org.murillo.sdp.impl;
-import org.murillo.abnf.Rule$group_attr;
-import org.murillo.abnf.Rule$identification_tag;
-import org.murillo.abnf.Rule$group_semantics;
+import org.murillo.abnf.Rule_group_attr;
+import org.murillo.abnf.Rule_identification_tag;
+import org.murillo.abnf.Rule_group_semantics;
 import org.murillo.sdp.GroupAttribute;
 /**
  *
@@ -17,7 +17,7 @@ class GroupAttributeBuilder extends Builder {
     private GroupAttribute group;
 
      @Override
-    public Object visit(Rule$group_attr rule) {
+    public Object visit(Rule_group_attr rule) {
         //New attr
         group = new GroupAttribute();
         //Generate it
@@ -27,7 +27,7 @@ class GroupAttributeBuilder extends Builder {
     }
 
     @Override
-    public Object visit(Rule$identification_tag rule) {
+    public Object visit(Rule_identification_tag rule) {
         //Get type
         String tag = rule.toString();
         //Set type
@@ -36,7 +36,7 @@ class GroupAttributeBuilder extends Builder {
         return tag;
     }
     @Override
-    public Object visit(Rule$group_semantics rule) {
+    public Object visit(Rule_group_semantics rule) {
         //Get type
         String semantics = rule.toString();
         //Set type

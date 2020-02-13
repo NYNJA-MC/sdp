@@ -6,7 +6,7 @@
 package org.murillo.sdp.impl;
 
 import org.murillo.sdp.SessionName;
-import org.murillo.abnf.Rule$session_name_field;
+import org.murillo.abnf.Rule_session_name_field;
 
 /**
  *
@@ -15,7 +15,7 @@ import org.murillo.abnf.Rule$session_name_field;
 class SessionNameBuilder extends Builder {
 
     @Override
-    public Object visit(Rule$session_name_field rule) {
+    public Object visit(Rule_session_name_field rule) {
         //Create object
         SessionName sessionName = new SessionName();
         //Get value

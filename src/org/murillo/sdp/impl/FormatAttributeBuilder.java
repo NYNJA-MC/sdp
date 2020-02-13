@@ -6,9 +6,9 @@
 package org.murillo.sdp.impl;
 
 import org.murillo.sdp.FormatAttribute;
-import org.murillo.abnf.Rule$fmtp_attr;
-import org.murillo.abnf.Rule$fmt;
-import org.murillo.abnf.Rule$param_list;
+import org.murillo.abnf.Rule_fmtp_attr;
+import org.murillo.abnf.Rule_fmt;
+import org.murillo.abnf.Rule_param_list;
 
 /**
  *
@@ -18,7 +18,7 @@ public class FormatAttributeBuilder extends Builder {
     private FormatAttribute attr;
 
     @Override
-    public Object visit(Rule$fmtp_attr rule) {
+    public Object visit(Rule_fmtp_attr rule) {
         //New attr
         attr = new FormatAttribute();
         //Generate it
@@ -28,7 +28,7 @@ public class FormatAttributeBuilder extends Builder {
     }
 
     @Override
-    public Object visit(Rule$fmt rule) {
+    public Object visit(Rule_fmt rule) {
         //Get value
         Integer fmt = Integer.parseInt(rule.toString());
         //Set it
@@ -38,7 +38,7 @@ public class FormatAttributeBuilder extends Builder {
     }
 
     @Override
-    public Object visit(Rule$param_list rule) {
+    public Object visit(Rule_param_list rule) {
         //Get value
         String parameters = rule.toString();
         //Set it

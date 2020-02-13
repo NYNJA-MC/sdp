@@ -10,7 +10,7 @@ import java.util.Stack;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.murillo.abnf.ParserContext;
-import org.murillo.abnf.Rule$session_description;
+import org.murillo.abnf.Rule_session_description;
 import org.murillo.sdp.impl.SessionDescriptionBuilder;
 /**
  *
@@ -31,7 +31,7 @@ public class SessionDescription {
     {
        ParserContext context = new ParserContext(string, false);
 
-        Rule$session_description rule = Rule$session_description.parse(context);
+        Rule_session_description rule = Rule_session_description.parse(context);
 
         if (rule == null)
         {

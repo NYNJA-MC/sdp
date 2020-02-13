@@ -6,7 +6,7 @@
 package org.murillo.sdp.impl;
 
 import org.murillo.sdp.Information;
-import org.murillo.abnf.Rule$information_field;
+import org.murillo.abnf.Rule_information_field;
 /**
  *
  * @author Sergio
@@ -15,7 +15,7 @@ class InformationBuilder extends Builder  {
 
    
     @Override
-    public Object visit(Rule$information_field rule) {
+    public Object visit(Rule_information_field rule) {
         //Create new session name
         Information info = new Information();
         //visit it
