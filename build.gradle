@@ -1,0 +1,50 @@
+description = 'Murilo SDP Library - https://github.com/murillo128'
+
+ant.importBuild('build.xml') { antTargetName ->
+    'ant-' + antTargetName
+}
+
+def releasesNynjaRepoUrl = "https://nynjagroup.jfrog.io/nynjagroup/libs-release-local"
+def snapshotsNynjaRepoUrl = "https://nynjagroup.jfrog.io/nynjagroup/libs-snapshot-local"
+
+apply plugin: 'java-library'
+apply plugin: 'maven-publish'
+
+ext {
+    jarToPublish = file( 'dist/sdp.jar' )
+}
+
+task sourcesJar(type: Jar) {
+    classifier = 'sources'
+    from 'src'
+}
+
+task javadocJar(type: Jar) {
+    classifier = 'javadoc'
+    from 'docs'
+}
+
+ publishing {
+    publications {
+        maven( MavenPublication ) {
+            groupId = 'org.murilo.sdp'
+            artifactId = 'murilo-sdp'
+            version '1.0.nynja.1.3'
+
+            artifact jarToPublish
+                artifact sourcesJar
+                artifact javadocJar
+            }
+    }
+
+    repositories {
+        maven {
+            name 'nynja'
+            url = version.endsWith('SNAPSHOT') ? snapshotsNynjaRepoUrl : releasesNynjaRepoUrl
+            credentials {
+                username nynjagroup_jfrog_io_user
+                password nynjagroup_jfrog_io_password
+            }
+        }
+    }
+}
