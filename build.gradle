@@ -29,7 +29,7 @@ task javadocJar(type: Jar) {
         maven( MavenPublication ) {
             groupId = 'org.murilo.sdp'
             artifactId = 'murilo-sdp'
-            version '1.0.nynja.1.3'
+            version '1.0.nynja.1.4-SNAPSHOT'
 
             artifact jarToPublish
                 artifact sourcesJar
