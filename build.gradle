@@ -6,7 +6,7 @@ ant.importBuild('build.xml') { antTargetName ->
 
 def releasesNynjaRepoUrl = "https://nynjagroup.jfrog.io/nynjagroup/libs-release-local"
 def snapshotsNynjaRepoUrl = "https://nynjagroup.jfrog.io/nynjagroup/libs-snapshot-local"
-version '1.0.nynja.1.4-SNAPSHOT'
+version '1.0.nynja.1.3'
 
 apply plugin: 'java-library'
 apply plugin: 'maven-publish'
