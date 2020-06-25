@@ -6,6 +6,7 @@ ant.importBuild('build.xml') { antTargetName ->
 
 def releasesNynjaRepoUrl = "https://nynjagroup.jfrog.io/nynjagroup/libs-release-local"
 def snapshotsNynjaRepoUrl = "https://nynjagroup.jfrog.io/nynjagroup/libs-snapshot-local"
+version '1.0.nynja.1.4-SNAPSHOT'
 
 apply plugin: 'java-library'
 apply plugin: 'maven-publish'
@@ -29,7 +30,6 @@ task javadocJar(type: Jar) {
         maven( MavenPublication ) {
             groupId = 'org.murilo.sdp'
             artifactId = 'murilo-sdp'
-            version '1.0.nynja.1.4-SNAPSHOT'
 
             artifact jarToPublish
                 artifact sourcesJar
