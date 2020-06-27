@@ -25,7 +25,7 @@ task javadocJar(type: Jar) {
     from 'docs'
 }
 
- publishing {
+publishing {
     publications {
         maven( MavenPublication ) {
             groupId = 'org.murilo.sdp'
